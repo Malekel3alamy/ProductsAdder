@@ -4,17 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".MainActivity">
+
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/productsInfo"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginTop="20dp"
@@ -26,10 +27,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="monospace"
                 android:text="Product general information:"
+                android:textColor="@color/black"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/black" />
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/edName"
@@ -37,7 +39,6 @@
                 android:layout_height="wrap_content"
                 android:hint="Name"
                 android:layout_marginTop="10dp"/>
-
 
             <EditText
                 android:id="@+id/edCategory"
@@ -57,17 +58,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Price"
-                android:inputType="number"/>
+                android:inputType="numberDecimal"/>
 
             <EditText
                 android:id="@+id/offerPercentage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Offer Percentage (Optional)"
-                android:inputType="number"/>
+                android:inputType="numberDecimal"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
-
 
         <LinearLayout
             android:layout_width="0dp"
@@ -86,37 +86,27 @@
                 android:textStyle="bold"
                 android:textColor="@color/black" />
 
-            <EditText
-                android:id="@+id/edSizes"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Sizes (Optional) | use , between each new size"
-                android:inputType="number"/>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 android:orientation="horizontal">
-                <Button
-                    android:id="@+id/buttonColorPicker"
-                    android:layout_width="wrap_content"
+                <EditText
+                    android:id="@+id/productColorET"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Colors"
-                    android:textSize="14sp"
-                    android:layout_marginTop="10dp"/>
-                <TextView
-                    android:id="@+id/tvSelectedColors"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:textSize="14sp"
-                    android:gravity="center"
-                    android:layout_marginStart="20dp"/>
+                    android:hint=" Product Color  (Optional) | Use , Between Each New Color"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    />
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <Button
                     android:id="@+id/buttonImagesPicker"
                     android:layout_width="wrap_content"
@@ -133,14 +123,19 @@
                     android:layout_marginStart="20dp"/>
             </LinearLayout>
 
-
         </LinearLayout>
-
-
-
-
-
+        <ProgressBar
+            android:visibility="invisible"
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
 </ScrollView>
