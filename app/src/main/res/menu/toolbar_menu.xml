@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item android:id="@+id/saveProduct"
-    android:icon="@drawable/ic_save"
+    android:icon="@drawable/up_loading"
     app:showAsAction="ifRoom"
     android:title="Add product"
-        android:iconTint="@color/white"/>
+        />
 
 </menu>
